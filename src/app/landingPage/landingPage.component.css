@@ -1,0 +1,31 @@
+.demo-table {
+  width: 100%;
+}
+
+.mat-column-id {
+  width: 10px;
+  border: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-title {
+  width: 50%;
+  padding-left: 16px;
+  border: 1px solid currentColor;
+  font-size: 20px;
+}
+
+.mat-column-userId {
+  width: 32px;
+  text-align: center;
+  border: 1px solid currentColor;
+  font-weight: bold;
+}
+
+.mat-column-completed {
+  width: 32px;
+  text-align: center;
+  border: 1px solid currentColor;
+  font-weight: bold;
+}

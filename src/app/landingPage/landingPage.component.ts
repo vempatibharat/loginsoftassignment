@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -10,15 +10,17 @@ export class LandingPageComponent {
   displayedColumns: string[] = ['id', 'title', 'userId', 'completed'];
   dataSourcedata: any;
   apiUrl = 'https://jsonplaceholder.typicode.com/todos/';
-
+  IsWait = false;
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.IsWait = true;
     this.getGridData();
   }
 
   getGridData() {
     var resp = this.sendGetRequest().subscribe((responseBody: any) => {
+      this.IsWait = false;
       this.dataSourcedata = responseBody;
     });
     return resp;

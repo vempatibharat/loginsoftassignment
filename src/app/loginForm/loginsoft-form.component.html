@@ -1,20 +1,27 @@
 <div>
-
   <h2>Login Form</h2>
   <form #loginForm="ngForm">
-    <div [hidden]="loginForm.submitted">
+    <div>
       <div>
         <div class="form-group">
           <label for="email">Login E-Mail/Username</label>
-          <input type="text" id="email" name="email" class="form-control"
-                required minlength="4"  [(ngModel)]="login.email" #email="ngModel" email="true">
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="form-control"
+            required
+            minlength="4"
+            [(ngModel)]="login.email"
+            #email="ngModel"
+            email="true"
+          />
 
-          <div *ngIf="email.invalid && (email.dirty || email.touched)"
-              class="alert">
-
-            <div *ngIf="email.errors?.required">
-              E-mail is required.
-            </div>
+          <div
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="alert"
+          >
+            <div *ngIf="email.errors?.required">E-mail is required.</div>
             <div *ngIf="email.errors?.minlength">
               E-mail must be at least 4 characters long.
             </div>
@@ -23,15 +30,22 @@
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control"
-                required minlength="4"  [(ngModel)]="login.password" #password="ngModel">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            required
+            minlength="4"
+            [(ngModel)]="login.password"
+            #password="ngModel"
+          />
 
-          <div *ngIf="password.invalid && (password.dirty || password.touched)"
-              class="alert">
-
-            <div *ngIf="password.errors?.required">
-              Password is required.
-            </div>
+          <div
+            *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="alert"
+          >
+            <div *ngIf="password.errors?.required">Password is required.</div>
             <div *ngIf="password.errors?.minlength">
               Password must be at least 4 characters long.
             </div>
@@ -39,12 +53,17 @@
         </div>
       </div>
 
-      <p>Fill in details to login(UserName = admin@admin.com, Password= passcode)</p>
-      <button type="submit"
-              [disabled]="loginForm.invalid" (click)="LoadLandingPage()">Login</button>
-      <button type="button"
-              (click)="loginForm.resetForm({})">Reset</button>
+      <p>
+        Fill in details to login(UserName = admin@admin.com, Password= passcode)
+      </p>
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        (click)="LoadLandingPage()"
+      >
+        Login
+      </button>
+      <button type="button" (click)="loginForm.resetForm({})">Reset</button>
     </div>
-
   </form>
 </div>
